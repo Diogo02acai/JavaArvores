@@ -2,13 +2,25 @@
 
 **Disciplina:** Estruturas de Dados  
 **Instituição:** IFRN - Campus Parnamirim  
-**Equipe:** [INSIRA O NOME DOS MEMBROS DO GRUPO AQUI]  
+**Equipe:** [Filipe Conrado e Luiz Diogo]  
 
 ## 📌 Sobre o Projeto
 Este projeto simula um sistema de gestão de Recursos Humanos (RH) focado no mapeamento visual de cargos e hierarquias de uma empresa. O sistema foi desenvolvido em **Java**, utilizando a estrutura de dados **Árvore N-ária (Árvore Genérica)**, já que no mundo corporativo um gestor pode ter múltiplos subordinados, não se limitando a apenas dois (como numa árvore binária).
 
 O projeto é executado via console (terminal) de forma interativa através de um menu de opções.
 
+## 🧠 Fundamentação Teórica: A Árvore N-ária
+
+Para resolver o problema de mapeamento hierárquico corporativo, optamos por descartar a Árvore Binária tradicional e implementar uma **Árvore N-ária** (ou Árvore Genérica). No mundo real, um gestor raramente possui apenas dois subordinados. A Árvore N-ária resolve essa limitação permitindo que cada nó tenha "N" filhos, crescendo horizontalmente conforme a necessidade da empresa.
+
+Mapeamento dos conceitos de Árvore para o nosso cenário de Negócios:
+
+* **Nó (Node):** Representado pela classe `Funcionario`. É a unidade básica que armazena os dados (Nome e Cargo).
+* **Raiz (Root):** O nível mais alto da hierarquia. No nosso projeto, é o **CEO**. É o único nó da árvore que não possui um "Nó Pai".
+* **Arestas (Edges):** As ligações entre os nós. Aqui, representam a **relação de subordinação** (quem responde a quem).
+* **Nós Filhos (Children):** Os subordinados diretos. Implementamos isso encapsulando uma Lista Dinâmica (`List<Funcionario>`) dentro de cada Nó, permitindo múltiplos subordinados.
+* **Nós Folha (Leaves):** Os nós nas extremidades inferiores da árvore. Representam os **funcionários operacionais** (aqueles cuja lista de subordinados está vazia).
+* **Profundidade/Nível:** Representa o "poder" hierárquico na empresa (quanto menor o nível numérico, mais próximo da Raiz/CEO, indicando maior autoridade).
 ---
 
 ## 🚀 Funcionalidades Implementadas
