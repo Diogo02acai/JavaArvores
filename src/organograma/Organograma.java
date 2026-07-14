@@ -22,12 +22,12 @@ public class Organograma {
     public void buscarCadeiaHierarquica(String nomeAlvo) {
         List<String> cadeia = new ArrayList<>();
         if (buscarCaminho(raiz, nomeAlvo, cadeia)) {
-            System.out.println("Cadeia Hierárquica para " + nomeAlvo + ":");
+            System.out.println("Cadeia Hierarquica para " + nomeAlvo + ":");
             for (int i = cadeia.size() - 1; i >= 0; i--) {
                 System.out.println(" -> " + cadeia.get(i));
             }
         } else {
-            System.out.println("Funcionário não encontrado.");
+            System.out.println("Funcionario nao encontrado.");
         }
     }
 
@@ -106,17 +106,17 @@ public class Organograma {
         int nivel2 = obterNivel(raiz, nome2, 0);
 
         if (nivel1 == -1 || nivel2 == -1) {
-            System.out.println("Um ou ambos os funcionários não existem.");
+            System.out.println("Um ou ambos os funcionarios nao existem.");
             return;
         }
 
         System.out.println("\nResultado da Comparação:");
         if (nivel1 < nivel2) {
-            System.out.println("✔️ " + nome1 + " possui MAIOR hierarquia (está acima) de " + nome2);
+            System.out.println("✔️ " + nome1 + " possui MAIOR hierarquia (esta acima) de " + nome2);
         } else if (nivel1 > nivel2) {
-            System.out.println("✔️ " + nome2 + " possui MAIOR hierarquia (está acima) de " + nome1);
+            System.out.println("✔️ " + nome2 + " possui MAIOR hierarquia (esta acima) de " + nome1);
         } else {
-            System.out.println("⚖️ " + nome1 + " e " + nome2 + " estão no MESMO nível hierárquico.");
+            System.out.println("⚖️ " + nome1 + " e " + nome2 + " estao no MESMO nivel hierarquico.");
         }
     }
 
