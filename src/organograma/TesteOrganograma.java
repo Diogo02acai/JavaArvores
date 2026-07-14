@@ -46,7 +46,7 @@ public class TesteOrganograma {
                     if (empresa.adicionarFuncionario(chefe, nomeNovo, cargo)) {
                         System.out.println("✅ Funcionario adicionado com sucesso!");
                     } else {
-                        System.out.println("X Erro: Chefe nao encontrado.");
+                        System.out.println("❌ Erro: Chefe nao encontrado.");
                     }
                     break;
 
@@ -56,7 +56,7 @@ public class TesteOrganograma {
                     if (empresa.removerFuncionario(demitido)) {
                         System.out.println("✅ " + demitido + " removido. Equipe remanejada para o andar de cima.");
                     } else {
-                        System.out.println("X Erro: Funcionario nao encontrado ou e o CEO.");
+                        System.out.println("❌ Erro: Funcionario nao encontrado ou e o CEO.");
                     }
                     break;
 
@@ -78,7 +78,7 @@ public class TesteOrganograma {
                     if (empresa.moverFuncionario(nomeMover, novoChefe, novoCargo)) {
                         System.out.println("✅ Funcionario realocado com sucesso!");
                     } else {
-                        System.out.println("X Erro ao realocar funcionario.");
+                        System.out.println("❌ Erro ao realocar funcionario.");
                     }
                     break;
 
