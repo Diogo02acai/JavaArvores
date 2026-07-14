@@ -10,7 +10,7 @@ public class TesteOrganograma {
         empresa.adicionarFuncionario("Alice", "Carla", "Diretora de RH");
         empresa.adicionarFuncionario("Beto", "Daniel", "Gerente de Redes");
         empresa.adicionarFuncionario("Beto", "Eduarda", "Gerente de Software");
-        empresa.adicionarFuncionario("Eduarda", "Fernando", "Desenvolvedor Sênior");
+        empresa.adicionarFuncionario("Eduarda", "Fernando", "Desenvolvedor Senior");
         
         int opcao = -1;
 
@@ -19,13 +19,13 @@ public class TesteOrganograma {
         while (opcao != 0) {
             System.out.println("\n================ MENU ================");
             System.out.println("1. Exibir Organograma");
-            System.out.println("2. Adicionar Funcionário");
-            System.out.println("3. Remover Funcionário");
-            System.out.println("4. Buscar Funcionário (Com Destaque)");
+            System.out.println("2. Adicionar Funcionario");
+            System.out.println("3. Remover Funcionario");
+            System.out.println("4. Buscar Funcionario (Com Destaque)");
             System.out.println("5. Promover/Rebaixar (Mudar de Chefe)");
             System.out.println("6. Comparar Hierarquia (Quem manda mais)");
             System.out.println("0. Sair");
-            System.out.print("Escolha uma opção: ");
+            System.out.print("Escolha uma opcao: ");
             
             opcao = scanner.nextInt();
             scanner.nextLine(); // Limpa o buffer do teclado (MUITO IMPORTANTE)
@@ -36,39 +36,39 @@ public class TesteOrganograma {
                     break;
                 
                 case 2:
-                    System.out.print("Nome do novo funcionário: ");
+                    System.out.print("Nome do novo funcionario: ");
                     String nomeNovo = scanner.nextLine();
-                    System.out.print("Cargo do novo funcionário: ");
+                    System.out.print("Cargo do novo funcionario: ");
                     String cargo = scanner.nextLine();
                     System.out.print("Nome do chefe direto dele: ");
                     String chefe = scanner.nextLine();
                     
                     if (empresa.adicionarFuncionario(chefe, nomeNovo, cargo)) {
-                        System.out.println("✅ Funcionário adicionado com sucesso!");
+                        System.out.println("✅ Funcionario adicionado com sucesso!");
                     } else {
-                        System.out.println("❌ Erro: Chefe não encontrado.");
+                        System.out.println("X Erro: Chefe nao encontrado.");
                     }
                     break;
 
                 case 3:
-                    System.out.print("Nome do funcionário a ser demitido: ");
+                    System.out.print("Nome do Funcionario a ser demitido: ");
                     String demitido = scanner.nextLine();
                     if (empresa.removerFuncionario(demitido)) {
                         System.out.println("✅ " + demitido + " removido. Equipe remanejada para o andar de cima.");
                     } else {
-                        System.out.println("❌ Erro: Funcionário não encontrado ou é o CEO.");
+                        System.out.println("X Erro: Funcionario nao encontrado ou e o CEO.");
                     }
                     break;
 
                 case 4:
-                    System.out.print("Digite o nome do funcionário para buscar: ");
+                    System.out.print("Digite o nome do funcionario para buscar: ");
                     String busca = scanner.nextLine();
                     System.out.println();
                     empresa.buscarCadeiaHierarquica(busca);
                     break;
 
                 case 5:
-                    System.out.print("Nome do funcionário a ser movido: ");
+                    System.out.print("Nome do funcionario a ser movido: ");
                     String nomeMover = scanner.nextLine();
                     System.out.print("Nome do NOVO chefe dele: ");
                     String novoChefe = scanner.nextLine();
@@ -76,16 +76,16 @@ public class TesteOrganograma {
                     String novoCargo = scanner.nextLine();
                     
                     if (empresa.moverFuncionario(nomeMover, novoChefe, novoCargo)) {
-                        System.out.println("✅ Funcionário realocado com sucesso!");
+                        System.out.println("✅ Funcionario realocado com sucesso!");
                     } else {
-                        System.out.println("❌ Erro ao realocar funcionário.");
+                        System.out.println("X Erro ao realocar funcionario.");
                     }
                     break;
 
                 case 6:
-                    System.out.print("Nome do primeiro funcionário: ");
+                    System.out.print("Nome do primeiro funcionario: ");
                     String func1 = scanner.nextLine();
-                    System.out.print("Nome do segundo funcionário: ");
+                    System.out.print("Nome do segundo funcionario: ");
                     String func2 = scanner.nextLine();
                     empresa.compararHierarquia(func1, func2);
                     break;
@@ -95,7 +95,7 @@ public class TesteOrganograma {
                     break;
 
                 default:
-                    System.out.println("Opção inválida!");
+                    System.out.println("Opcao invalida!");
             }
         }
         scanner.close();
